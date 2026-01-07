@@ -77,7 +77,7 @@ update :: proc() {
 
 	input = linalg.normalize0(input)
 	g.player_pos += input * rl.GetFrameTime() * 100
-	g.some_number += 1
+	g.some_number -= 1
 
 	if rl.IsKeyPressed(.ESCAPE) {
 		g.run = false
@@ -86,7 +86,7 @@ update :: proc() {
 
 draw :: proc() {
 	rl.BeginDrawing()
-	rl.ClearBackground(rl.BLACK)
+	rl.ClearBackground(rl.BLUE)
 
 	rl.BeginMode2D(game_camera())
 	rl.DrawTextureEx(g.player_texture, g.player_pos, 0, 1, rl.WHITE)
